@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext, useEffect } from 'react'
+import { Route, Routes } from 'react-router-dom'
+import R1 from './Components/R1';
+import R2 from './Components/R2';
+import NavBar from './Components/NavBar';
+import Logger from './Components/Logger';
+import Home from './Components/Home';
+import LogContext from './Context/logs/logContext'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const { write } = useContext(LogContext);
+
+    useEffect(() => {
+        write('App Mounted');
+        return () => write('App Unmounted');
+    }, [write]);
+
+    return (
+        <div className='df cnt'>
+            <NavBar />
+            <Logger />
+            <Routes>
+                <Route exact path='/' element={<Home />} />
+                <Route exact path='/r1' element={<R1 />} />
+                <Route exact path='/r2' element={<R2 />} />
+            </Routes>
+        </div>
+    );
 }
 
 export default App;

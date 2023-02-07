@@ -1,13 +1,119 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
+
+.df {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cnt {
+    height: 98vh;
+    background-color: rgb(255, 255, 0, 0.2);
+    font-size: 2rem;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 0.7em 0;
+    box-shadow: 0 1px 5px 0.1px rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+    border: unset;
+    background-color: transparent;
+    text-decoration: unset;
+    color: rgba(129, 0, 184, 0.755);
+    font-size: 1.6rem;
+    font-weight: 500;
+    border: 1px solid rgba(0, 0, 0, 0.116);
+    width: 7rem;
+    text-align: center;
+    padding: 0.15rem 0;
+    border-radius: 0.4rem;
+    background-color: rgba(101, 255, 50, 0.3);
+    transition: all 120ms ease-in-out;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: rgba(101, 255, 50, 0.5);
+}
+
+.lgr {
+    position: absolute;
+    right: 0;
+    font-size: 0.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    max-height: 60%;
+    backdrop-filter: blur(3px);
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 13.5rem;
+}
+
+.lgr h2 {
+    margin: unset;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 1px 5px 0.1px rgba(0, 0, 0, 0.12);
+    padding: 0.4rem 0;
+}
+
+.lgr .msgs {
+    width: 100%;
+    text-align: end;
+    overflow-y: scroll;
+    padding-right: 0.5rem;
+    padding-left: 0.3rem;
+}
+
+.lgr .msgs div {
+    border-bottom: 1px solid rgba(140, 0, 255, 0.12);
+}
+
+.lgr .msgs div:first-of-type {
+    margin-top: 0.5rem;
+}
+
+.lgr .msgs div:last-of-type {
+    margin-bottom: 0.3rem;
+    border-bottom: unset;
+}
+
+.lgr .msgs .btncntr button {
+    font-size: inherit;
+}
+
+.lgr .msgs .btncntr {
+    margin-top: 0.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+    color: rgb(208, 154, 154);
 }
